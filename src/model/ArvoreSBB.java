@@ -1,5 +1,9 @@
-package prática02;
+package model;
 
+/**
+ *
+ * @author Ziviani, gabrieldutra, MarceloFCandido, rubiotorres
+ */
 public class ArvoreSBB {
 
     private static class No {
@@ -165,19 +169,36 @@ public class ArvoreSBB {
         return filho;
     }
 
+    /**
+     * Construtor que cria árvore SBB com raiz nula
+     */
     public ArvoreSBB() {
         this.raiz = null;
         this.propSBB = true;
     }
 
+    /**
+     * Pesuisar item na árvore
+     *
+     * @param reg Item a ser pesquisado
+     * @return o Item encontrado
+     */
     public Item pesquisa(Item reg) {
         return this.pesquisa(reg, this.raiz);
     }
 
+    /**
+     * Insere item na árvore
+     *
+     * @param reg Item a ser inserido
+     */
     public void insere(Item reg) {
         this.raiz = insere(reg, null, this.raiz, true);
     }
 
+    /**
+     * Pré order
+     */
     public void pre_order() {
         this.central(this.raiz);
     }
