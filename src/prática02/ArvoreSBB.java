@@ -12,6 +12,7 @@ public class ArvoreSBB {
     private static final byte Vertical = 1;
     private No raiz;
     private boolean propSBB;
+    private static int contadorDeComps = 0;
 
     private void central(No p) {
         if (p != null) {
@@ -25,12 +26,18 @@ public class ArvoreSBB {
 
     private Item pesquisa(Item reg, No p) {
         if (p == null) {
+            System.out.println("Comparações: " + contadorDeComps);
+            contadorDeComps = 0;
             return null; // @{\it Registro n\~ao econtrado}@
         } else if (reg.compara(p.reg) < 0) {
+            contadorDeComps++;
             return pesquisa(reg, p.esq);
         } else if (reg.compara(p.reg) > 0) {
+            contadorDeComps++;
             return pesquisa(reg, p.dir);
         } else {
+            System.out.println("Comparações: " + contadorDeComps);
+            contadorDeComps = 0;
             return p.reg;
         }
     }
