@@ -43,8 +43,8 @@ public class Principal {
 
         System.out.println("Itens ordenados:");
 
-        // n varia de 1000 a 9000, de 1000 em 1000
-        for (int n = 1000; n <= 9000; n += 1000) {
+        // n varia de 10.000 a 100.000, de 10.000 em 10.000
+        for (int n = 10000; n <= 100000; n += 10000) {
             arvoreSBB = new ArvoreSBB();
             itens = criaListaOrdenada(0, n);
             insereElementosOrdenados(itens, arvoreSBB);
@@ -65,8 +65,8 @@ public class Principal {
 
         System.out.println("Itens aleatórios:");
 
-        // n varia de 1000 a 9000, de 1000 em 1000
-        for (int n = 1000; n <= 9000; n += 1000) {
+        // n varia de 10.000 a 100.000, de 10.000 em 10.000
+        for (int n = 10000; n <= 100000; n += 10000) {
             arvoreSBB = new ArvoreSBB();
             itens = criaListaOrdenada(0, n);
             insereElementosAleatorios(itens, arvoreSBB);
